@@ -1,21 +1,37 @@
+BASEDIR="$(pwd)"
+
 sudo apt-get update
+sudo apt-get upgrade
+sudo apt-get install -y build-essential
+
 sudo apt-get install -y curl libssl-dev
 sudo apt-get install -y ffmpeg
+
+#
+sudo apt-get install -y libopenblas-dev liboplenblas-base liblapacke-dev 
+sudo apt-get install -y libgstreamer0.10-dev libgstreamer-plugins-base0.10-dev
 
 #From opencv documentation
 sudo apt-get install -y build-essential
 sudo apt-get install -y cmake git libgtk2.0-dev pkg-config libavcodec-dev libavformat-dev libswscale-dev
 sudo apt-get install -y python-dev python3-dev libtbb2 libtbb-dev libjpeg-dev libpng-dev libtiff-dev libjasper-dev libdc1394-22-dev libboost-all-dev
 
+sudo apt-get install -y libgoogle-glob-dev
+sudo apt-get install -y libgflags-dev
+sudo apt-get install -y protobuf-compiler libprotobuf-dev
+
 #I recommand install numpy via pip
-python3 -m pip install numpy
+sudo apt-get install -y  python-dev python3-dev python3-pip
+python3 -m pip install numpy scipy
 sudo apt-get remove -y python2.7-minimal
 
-#For scipy pip installation
-sudo apt-get install -y python-dev python3-dev
-python3 -m pip install scipy
-
-BASEDIR="$(pwd)"
+#install Eigen 
+sudo apt-get remove -y libeigen3-dev
+cd  $HOME/Downloads
+wget -O eigen.zip https://gitlab.com/libeigen/eigen/-/archive/3.3.7/eigen-3.3.7.zip
+unzip eigen.zip
+mkdir eigen-build && eigen-build 
+mkdir ../eigen-3.3.7/ && sudo make install
 
 OPENCV_VERSION="4.4.0"
 cd /opt && \
