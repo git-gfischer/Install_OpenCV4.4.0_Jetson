@@ -1,6 +1,6 @@
-# Install OpenCV 4.4.0 on Jetson TX2
+# Install OpenCV 4.4.0 on Jetson
 
-Install Opencv 4.4.0 on NVIDIA Jetson TX2 development kit. 
+Install Opencv 4.4.0 on NVIDIA Jetson TX2 and Nano development kit. 
 
 This OpenCV installer was tested on Jetson TX2 board with:
 * nvidia-jetpack(L4T): 4.6.2-b5.
@@ -10,6 +10,14 @@ This OpenCV installer was tested on Jetson TX2 board with:
 
 __**Note:** This installer will uninstall python2.7 
 
-Usage:
+Usage on Jetson TX2 development kit:
 
-`$ ./install_opencv.sh`
+`$ ./install_opencv_TX2.sh`
+
+Usage on Jetson Nano development kit:
+
+`$ ./install_opencv_Nano.sh`
+
+Usage on Jetson Xavier NX development kit:
+
+`$ ./install_opencv_Xavier_NX.sh`
